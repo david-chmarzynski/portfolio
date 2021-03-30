@@ -73,9 +73,12 @@ $red: #D82222;
 .a {
   text-decoration: none;
   color: $white;
+  transition: .2s;
 
   &:hover {
-    color: $black;
+    color: transparent;
+    -webkit-text-stroke: 4px $white;
+    transition: .2s;
   }
 }
 
@@ -101,8 +104,8 @@ $red: #D82222;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
   .link {
-    font-size: 8.2rem !important;
+    font-size: 6.5rem !important;
   }
 }
