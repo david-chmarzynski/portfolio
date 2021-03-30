@@ -1,0 +1,108 @@
+$green: #03B5AA;
+$black: #2E2E3A;
+$white: #FFFFFF;
+$red: #D82222;
+
+.menu {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.container {
+  width: 60%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 8vh;
+}
+
+.wrapper {
+
+}
+
+.secondaryBackground {
+  background: $black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.menuLayer {
+  position: relative;
+  background: $red;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menuLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+}
+
+.nav {
+  display: block;
+}
+
+.ul {
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  list-style: none;
+  font-size: 8vw;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.a {
+  text-decoration: none;
+  color: $white;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.footer {
+  height: 100px;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+
+  svg {
+    margin: 10px;
+    cursor: pointer;
+    color: $white;
+    transition: .3s;
+
+    &:hover {
+      color: black;
+      transition: .3s;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .link {
+    font-size: 8.2rem !important;
+  }
+}

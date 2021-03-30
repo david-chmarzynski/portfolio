@@ -1,0 +1,52 @@
+$green: #03B5AA;
+$black: #2E2E3A;
+$white: #FFFFFF;
+$red: #D82222;
+
+.header {
+  height: 8vh;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.wrapper {
+
+}
+
+.innerHeader {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+}
+
+.span {
+  margin-left: 5rem;
+  color: $white;
+  font-weight: 700;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  color: $white;
+}
+
+.close {
+  .button {
+    cursor: pointer;
+    font-size: 2rem;
+    color: $white;
+  }
+
+  .svg {
+    color: $white;
+    font-size: 1.4rem;
+  }
+}
