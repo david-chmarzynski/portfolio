@@ -17,10 +17,12 @@ $white2: #F2F2F2;
 
 .container {
   width: 60%;
+  height: 92vh;
   height: auto;
   padding-top: 19vh;
   margin: auto;
   display: flex;
+  z-index: 8;
 }
 
 .layerLeft {
