@@ -20,18 +20,18 @@ export default function Header({ state, setState }) {
                         <div className={styles.logo}>
                             <Link href="/">
                                 <a
-                                  className={styles.link}
+                                  className={!state.deployed ? styles.linkDark : styles.linkLight}
                                   onClick={() => setState({ deployed: true, clicked: true, menu: "Home"})}
                                 >
                                     DAVID CHMARZYNSKI
                                 </a>
                             </Link>
-                            <span className={styles.span}>FR</span>
+                            <span className={!state.deployed ? styles.spanDark : styles.spanLight}>FR</span>
                         </div>
                         {!state.deployed && (
                             <Link href="/">
                                 <a
-                                  className={styles.a}
+                                  className={!state.deployed ? styles.linkDark : styles.linkLight}
                                   onClick={() => setState({ deployed: true, clicked: true, menu: "Home"})}
                                 >
                                   <CloseOutlined className={styles.svg} />

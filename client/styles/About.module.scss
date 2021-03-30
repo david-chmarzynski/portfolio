@@ -1,0 +1,83 @@
+$green: #03B5AA;
+$black: #2E2E3A;
+$white: #FFFFFF;
+$red: #D82222;
+$white2: #F2F2F2;
+
+.about {
+  background: $white2;
+  width: 100%;
+  position: absolute;
+  overflow: scroll;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+}
+
+.container {
+  width: 60%;
+  height: auto;
+  padding-top: 19vh;
+  margin: auto;
+  display: flex;
+}
+
+.layerLeft {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  .span {
+    transform: rotate(90deg);
+    font-size: 16vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 15vw;
+    color: $black;
+  }
+}
+
+.layerRight {
+  width: 50%;
+  height: 100vh;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 2vw;
+  font-weight: 700;
+  color: $black;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.line {
+  width: 100px;
+  border: 2px solid $black;
+  margin: 0 10px -4% 10px;
+}
+
+.sub {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1vw;
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+
+  .line {
+    margin: 0 6px -1.5% 6px;
+  }
+}

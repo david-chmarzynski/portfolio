@@ -25,17 +25,30 @@ $red: #D82222;
   height: 8vh;
 }
 
-.span {
+.spanLight {
   margin-left: 5rem;
   color: $white;
   font-weight: 700;
 }
 
-.link {
+.spanDark {
+  margin-left: 5rem;
+  color: $black;
+  font-weight: 700;
+}
+
+.linkLight {
   font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
   color: $white;
+}
+
+.linkDark {
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  color: $black;
 }
 
 .close {
