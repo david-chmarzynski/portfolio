@@ -2,7 +2,6 @@ import styles from '../../styles/About.module.scss';
 import tableau2 from '../../datas/index.js';
 
 export default function About() {
-  console.log(tableau2.tableau2);
   return (
     <div className={styles.about}>
       <div className={styles.container}>
@@ -14,7 +13,7 @@ export default function About() {
         <div className={styles.layerRight}>
           {tableau2.tableau2.map(tab => (
             <div className={styles.block}>
-              <div className={styles.mainTitle}>
+              <div className={tab.title === "Education" ? styles.firstMainTitle : styles.mainTitle}>
                 <div className={styles.title}>
                   {tab.title}
                 </div>

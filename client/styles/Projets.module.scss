@@ -1,0 +1,59 @@
+$white2: #F2F2F2;
+
+.projets {
+  background: $white2;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 92vh;
+  height: auto;
+  margin-top: 14vh;
+  display: flex;
+  z-index: 8;
+}
+
+.layer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  font-size: 200px;
+  color: #0079FF;
+  right: 0;
+  top: 0;
+}
+
+.messengerImage {
+  height: 70vh;
+  width: 70%;
+  max-width: 600px;
+  max-height: 950px;
+  background: url("/images/messenger.jpg") center center;
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.h1 {
+  font-size: 8vw;
+  
+  color: #0079FF;
+
+  &:hover {
+    color: transparent;
+    -webkit-text-stroke: 4px #0079FF;
+  }
+}
