@@ -1,8 +1,15 @@
 import gsap from 'gsap';
 
 // OPEN MENU
-export const staggerReveal = (node1, node2) => {
-  gsap.from([node1, node2], {
+export const staggerReveal = (node1, node2, menu) => {
+  gsap.to(menu, { duration: 0, css: { display: "block" } });
+  gsap.to([node1, node2], {
+    duration: 0,
+    opacity: 1,
+    height: "100%"
+  });
+  
+  gsap.fromTo([node1, node2], 0.55, {
     duration: 0.8,
     height: 0,
     transformOrigin: "right top",
@@ -11,11 +18,14 @@ export const staggerReveal = (node1, node2) => {
     stagger: {
       amount: 0.1
     }
+  }, {
+    height: "100vh",
+    skewY: 0
   });
 };
 
 // CLOSE MENU
-export const staggerRevealClose = (node1, node2) => {
+export const staggerRevealClose = (node1, node2, menu) => {
   gsap.to([node1, node2], {
     duration: 0.8,
     height: 0,
@@ -24,6 +34,7 @@ export const staggerRevealClose = (node1, node2) => {
       amount: 0.07
     }
   });
+  gsap.to(menu, { duration: 1, css: { display: "none" } });
 };
 
 // STAGGER THE LINKS TO APPEAR

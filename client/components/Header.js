@@ -10,6 +10,8 @@ export default function Header({ state, setState }) {
     useEffect(() => {
         if(router.pathname !== "/") {
             setState({ deployed: false, clicked: null, menu: "Closed" });
+        } else {
+            setState({ deployed: true, clicked: true, menu: "Home"});
         }
     }, [router]);
     return (
