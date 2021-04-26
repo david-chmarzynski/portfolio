@@ -4,6 +4,7 @@ import tableau2 from '../../datas/index.js';
 export default function About() {
   return (
     <div className={styles.about}>
+      <div className={styles.cover}></div>
       <div className={styles.container}>
         <div className={styles.layerLeft}>
           <span className={styles.span}>

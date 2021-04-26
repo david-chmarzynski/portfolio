@@ -38,22 +38,16 @@ const tableau2 = [
     number: "04",
     subtitles: [
       {
+        title: "Email",
+        year: ""
+      },
+      {
         title: "Linked In",
-        year: " Ici"
+        year: ""
       },
       {
         title: "Github",
-        year: " Ici"
-      }
-    ]
-  },
-  {
-    title: "Contact",
-    number: "05",
-    subtitles: [
-      {
-        title: "Demandez-moi",
-        year: " Ici"
+        year: ""
       }
     ]
   }
