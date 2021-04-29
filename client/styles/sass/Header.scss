@@ -4,7 +4,7 @@ $white: #FFFFFF;
 $red: #D82222;
 $white2: #F2F2F2;
 
-.header {
+.header-main {
   width: 100%;
   height: 8vh;
   background-color: transparent;
@@ -13,7 +13,7 @@ $white2: #F2F2F2;
   top: 0;
 }
 
-.container {
+.header-container {
   width: 60%;
   margin: 0 auto;
   @media (max-width: 720px) {
@@ -21,11 +21,11 @@ $white2: #F2F2F2;
   }
 }
 
-.wrapper {
+.header-wrapper {
 
 }
 
-.innerHeader {
+.header-inner {
   position: relative;
   z-index: 13;
   display: flex;
@@ -34,7 +34,7 @@ $white2: #F2F2F2;
   height: 8vh;
 }
 
-.spanLight {
+.header-span-light {
   margin-left: 3rem;
   color: $white;
   font-weight: 700;
@@ -49,11 +49,12 @@ $white2: #F2F2F2;
   }
 }
 
-.spanDark {
+.header-span-dark {
   margin-left: 3rem;
   color: black;
   font-weight: 700;
   font-size: 1.2rem;
+  transition: color 1.3s;
   @media (max-width: 1100px) {
     font-size: 1.2rem;
     margin-left: 1.2rem;
@@ -64,7 +65,7 @@ $white2: #F2F2F2;
   }
 }
 
-.linkLight {
+.header-link-light {
   cursor: pointer;
   font-weight: 700;
   font-size: 1.2rem;
@@ -78,12 +79,13 @@ $white2: #F2F2F2;
   }
 }
 
-.linkDark {
+.header-link-dark {
   cursor: pointer;
   font-weight: 700;
   font-size: 1.2rem;
   text-decoration: none;
   color: black;
+  transition: color 1.3s;
   @media (max-width: 1100px) {
     font-size: 1.2rem;
   }
@@ -92,14 +94,14 @@ $white2: #F2F2F2;
   }
 }
 
-.close {
+.header-close {
   .button {
     font-size: 2rem;
     font-weight: 900;
     color: $white;
   }
 
-  .svg {
+  .header-svg {
     color: $white;
     font-size: 1.4rem;
   }

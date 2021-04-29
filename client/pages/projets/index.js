@@ -1,110 +1,128 @@
-import styles from '../../styles/Projets.module.scss';
+// IMPORT NEXT.JS & REACT COMPONENTS
 import Link from 'next/link';
-import RightArrow from './arrow-right.svg';
-import LeftArrow from './arrow-left.svg';
-import IntroOverlay from '../../components/IntroOverlay';
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
+// IMPORT ASSETS
+import RightArrow from './arrow-right.svg';
+
+// IMPORT GSAP & ANIMATIONS
+import gsap from 'gsap';
+
+// PROJETS ARRAY
 const projects = [
   {id: 1, title: "Messenger", subtitle: "Application de discussion en temps réel.", img: "/images/messenger.jpg"},
   {id: 2, title: "Local Drive", subtitle: "Plateforme \"Click & Collect\" pour le marché local.", img: "/images/local.jpg"},
   {id: 3, title: "Epitech", subtitle: "Alternance MSC Pro Epitech [2021-2024]", img: "/images/epitech_m.jpg"}
 ]
 
-export default function Projets() {
-  
-  let line1 = useRef(null);
-  let overlayTop1 = useRef(null);
-  let overlayTop2 = useRef(null);
-  let overlayTop3 = useRef(null);
-  let overlayBottom1 = useRef(null);
-  let overlayBottom2 = useRef(null);
-  let overlayBottom3 = useRef(null);
-  let introOverlay = useRef(null);
+export default function Projets({ setState }) {
+  let router = useRouter();
+  let [disabled, setDisabled] = useState(false);
+  const disableMenu = () => {
+    setDisabled(!disabled);
+    setTimeout(() => {
+        setDisabled(false);
+    }, 1000);
+  };
   useEffect(() => {
     const tl = gsap.timeline();
 
-    tl.from(".line", 0.5,{
-      opacity: 0,
+    tl.from(".projets-line span",{
       y: 100,
       skewY: 7,
       delay: 1,
+      duration: 1.5,
       ease: "power4.out",
-    }).to(".overlayTop", 1.6,{
+      stagger: {
+        amount: 0.3
+      }
+    }).to(".projets-overlay-top",{
       height: 0,
+      duration: 1.3,
       ease: "expo.inOut",
       stagger: 0.4
-    }).to(".overlayBottom", 1.6,{
+    }).to(".projets-overlay-bottom",{
       width: 0,
+      duration: 1.6,
       ease: "expo.inOut",
       display: "none",
       stagger: {
         amount: .4
       }
-    }).to(introOverlay, 0,{
+    }).to(".projets-intro-overlay",{
+      duration: 0,
       css: {
         display: "none"
       }
-    }).from(".caseImage img", 1.6, {
+    }).from(".projets-case-image img", {
+      duration: 1.4,
       scale: 1.2,
       ease: "expo.inOut",
       delay: -2,
       stagger: {
         amount: 0.4
       }
-    })
+    });
   }, []);
+
+  const handleMenu = () => {
+    gsap.to([".projets-main", ".about-main"], {
+        opacity: 0,
+        duration: .8
+    });
+    setDisabled(true);
+    setTimeout(() => {
+        router.replace("/about");
+        router.pathname = "/about";
+        setState({ deployed: true, clicked: true, menu: "Home"});
+    }, 850)
+};
   return (
-    <div className={styles.projets}>
-      <div className={styles.container}>
+    <div className='projets-main'>
+      <Head>
+        <title>DC | Projets</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="projets-container">
       <>
-        <div className={styles.introOverlay} ref={el => (introOverlay = el)}>
-          <div className={styles.top}>
-            <div className="overlayTop" ref={el => (overlayTop1 = el)}></div>
-            <div className="overlayTop" ref={el => (overlayTop2 = el)}></div>
-            <div className="overlayTop" ref={el => (overlayTop3 = el)}></div>
+        <div className="projets-intro-overlay">
+          <div className="projets-top">
+            <div className="projets-overlay-top"></div>
+            <div className="projets-overlay-top"></div>
+            <div className="projets-overlay-top"></div>
           </div>
-          <div className={styles.bottom}>
-            <div className="overlayBottom" ref={el => (overlayBottom1 = el)}></div>
-            <div className="overlayBottom" ref={el => (overlayBottom2 = el)}></div>
-            <div className="overlayBottom" ref={el => (overlayBottom3 = el)}></div>
+          <div className="projets-bottom">
+            <div className="projets-overlay-bottom"></div>
+            <div className="projets-overlay-bottom"></div>
+            <div className="projets-overlay-bottom"></div>
           </div>
         </div>
       </>
-        <div className={styles.row}>
-          <h2 ref={el => (line1 = el)}>
-            <div className="line">
-              <span >Retrouvez une sélection</span>
+        <div className="projets-row">
+          <h2>
+            <div className="projets-line">
+              <span className="projets-span">Retrouvez une sélection</span>
             </div>
-            <div className="line">
-              <span>de projets.</span>
+            <div className="projets-line">
+              <span className="projets-span">de projets.</span>
             </div>
           </h2>
-          <div className={styles.btnRow}>
-            <Link href="/about">
-              <a>En savoir plus<RightArrow /></a>
-            </Link>
+          <div className="projets-btn-row">
+            <a onClick={handleMenu}>En savoir plus<RightArrow /></a>
           </div>
         </div>
-        <div className={styles.cases}>
-          <div className={styles.container}>
-          <div className={styles.casesNav}>
-            <div className={styles.casesArrowPrev}>
-              <LeftArrow />
-            </div>
-            <div className={styles.casesArrowNext}>
-              <RightArrow />
-            </div>
-          </div>
-          <div className={styles.casesRow}>
+        <div className="projets-cases">
+          <div className="projets-container">
+          <div className="projets-cases-row">
             {projects.map((el) => (
-              <div className={styles.case} key={el.id}>
-                <div className={styles.caseDetails}>
+              <div className="projets-case" key={el.id}>
+                <div className="projets-case-details">
                   <span>{el.title}</span>
                   <h2>{el.subtitle}</h2>
                 </div>
-                <div className="caseImage">
+                <div className="projets-case-image">
                   <img src={el.img} alt={el.title}/>
                 </div>
               </div>

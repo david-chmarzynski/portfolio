@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import styles from '../styles/Header.module.scss';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { CloseOutlined } from '@ant-design/icons';
+import {gsap} from 'gsap';
 
 
 export default function Header({ state, setState }) {
@@ -21,9 +21,17 @@ export default function Header({ state, setState }) {
     }, [router]);
 
     const handleMenu = () => {
+        gsap.to([".projets-main", ".about-main"], {
+            opacity: 0,
+            duration: .8
+        });
         setDisabled(true);
-        setState({ deployed: true, clicked: true, menu: "Home"})
-    }
+        setTimeout(() => {
+            router.replace("/");
+            router.pathname = "/";
+            setState({ deployed: true, clicked: true, menu: "Home"});
+        }, 850)
+    };
 
     const disableMenu = () => {
       setDisabled(!disabled);
@@ -32,34 +40,24 @@ export default function Header({ state, setState }) {
       }, 1000);
     };
     return (
-        <header className={styles.header}>
-            <div className={styles.container}>
-                <div className={styles.wrapper}>
-                    <div className={styles.innerHeader}>
-                        <div className={styles.logo}>
-                            <Link href="/">
-                                <a
-                                  className={!state.deployed && router.pathname !== "/about" ? styles.linkDark : styles.linkLight}
-                                  onClick={handleMenu}
-                                >
-                                    DAVID CHMARZYNSKI
-                                </a>
-                            </Link>
-                            <span className={!state.deployed && router.pathname !== "/about" ? styles.spanDark : styles.spanLight}>FR</span>
-                        </div>
-                        {!state.deployed &&  (
-                            <Link href="/">
-                                <a
-                                  className={!state.deployed && router.pathname !== "/about" ? styles.linkDark : styles.linkLight}
-                                  onClick={handleMenu}
-                                >
-                                  {!disabled ?  <CloseOutlined className={styles.svg} /> : null}
-                                </a>
-                            </Link>
-                        )}
-                    </div>
-                </div>
+        <header className="header-main">
+          <div className="header-container">
+            <div className="header-wrapper">
+              <div className="header-inner">
+                <div className="header-logo">
+                  <a className={!state.deployed && router.pathname !== "/about" ? "header-link-dark" : "header-link-light"} onClick={handleMenu}>
+                    DAVID CHMARZYNSKI
+                  </a>
+                  <span className={!state.deployed && router.pathname !== "/about" ? "header-span-dark" : "header-span-light"}>FR</span>
+                  </div>
+                  {!state.deployed &&  (
+                    <a className={!state.deployed && router.pathname !== "/about" ? "header-link-dark" : "header-link-light"} onClick={handleMenu}>
+                      {!disabled ?  <CloseOutlined className="projets-svg" /> : null}
+                    </a>
+                  )}
+              </div>
             </div>
+          </div>
         </header>
     )
 };
