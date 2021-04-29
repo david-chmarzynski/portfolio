@@ -1,5 +1,6 @@
 // IMPORT NEXT.JS & REACT COMPONENTS
 import { useEffect } from 'react';
+import Head from 'next/head';
 
 // IMPORT GSAP & ANIMATIONS
 import gsap from 'gsap';
@@ -45,6 +46,10 @@ export default function About() {
 
   return (
     <div className="about-main">
+      <Head>
+        <title>DC | A propos</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="about-container">
         <div className="about-left-layer">
           <h1 className="about-title">

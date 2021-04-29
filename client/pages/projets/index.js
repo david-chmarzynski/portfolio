@@ -20,12 +20,7 @@ const projects = [
 export default function Projets({ setState }) {
   let router = useRouter();
   let [disabled, setDisabled] = useState(false);
-  const disableMenu = () => {
-    setDisabled(!disabled);
-    setTimeout(() => {
-        setDisabled(false);
-    }, 1000);
-  };
+  
   useEffect(() => {
     const tl = gsap.timeline();
 
