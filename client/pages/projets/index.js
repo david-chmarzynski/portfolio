@@ -12,9 +12,9 @@ import gsap from 'gsap';
 
 // PROJETS ARRAY
 const projects = [
-  {id: 1, title: "Messenger", subtitle: "Application de discussion en temps réel.", img: "/images/messenger.jpg"},
+  {id: 1, title: "Messenger", subtitle: "Application de discussion en temps réel.", img: "/images/mess.jpg"},
   {id: 2, title: "Local Drive", subtitle: "Plateforme \"Click & Collect\" pour le marché local.", img: "/images/local.jpg"},
-  {id: 3, title: "Epitech", subtitle: "Alternance MSC Pro Epitech [2021-2024]", img: "/images/epitech_m.jpg"}
+  {id: 3, title: "Epitech", subtitle: "Alternance MSC Pro Epitech [2021-2024]", img: "/images/epitech.jpg"}
 ]
 
 export default function Projets({ setState }) {
@@ -71,7 +71,7 @@ export default function Projets({ setState }) {
     setTimeout(() => {
         router.replace("/about");
         router.pathname = "/about";
-        setState({ deployed: true, clicked: true, menu: "Home"});
+        setState({ deployed: false, clicked: true, menu: "Home"});
     }, 850)
 };
   return (

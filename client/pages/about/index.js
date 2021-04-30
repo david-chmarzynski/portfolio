@@ -98,7 +98,7 @@ export default function About() {
           </h2>
           <div className="about-social">
             <div className="about-link">
-              <p className="about-github">EMAIL</p>
+              <p className="about-email">EMAIL</p>
             </div>
             <div className="about-link">
               <p className="about-github">GITHUB</p>
@@ -112,7 +112,7 @@ export default function About() {
           </h2>
           <div className="about-hire">
             <div className="about-epitech">
-
+              E
             </div>
             <div className="about-curriculum">
               CV

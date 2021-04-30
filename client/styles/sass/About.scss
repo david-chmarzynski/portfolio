@@ -12,6 +12,14 @@ $white2: #F2F2F2;
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Rikos";
+  src: url("/fonts/Rikos/Rikos.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 .about-main {
   background-color: $black;
   height: 100vh;
@@ -112,7 +120,18 @@ $white2: #F2F2F2;
 
 .about-email {
   margin-block-end: 0;
+  cursor: pointer;
   width: 50%;
+  transition-duration: .3s;
+  text-decoration: none;
+  background: linear-gradient(to top, #FFF 0%, #FFF 100%, transparent 100%) no-repeat left top / 0 100%;
+  transition: background-size .6s;
+}
+
+.about-email:hover {
+    transition-duration: .4s;
+    color: $black;
+    background-size: 100% 100%;
 }
 
 .about-github {
@@ -135,16 +154,22 @@ $white2: #F2F2F2;
 }
 
 .about-epitech {
-  height: 87px;
-  width: 87px;
+  height: 70px;
+  width: 220px;
   border-radius: 100px;
   background-color: $white;
   margin-right: 2rem;
+  font-family: "Rikos";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
 }
 
 .about-curriculum {
-  height: 87px;
-  width: 87px;
+  height: 70px;
+  width: 70px;
   border-radius: 100px;
   background-color: $white;
   display: flex;
