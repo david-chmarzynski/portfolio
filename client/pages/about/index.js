@@ -1,9 +1,13 @@
 // IMPORT NEXT.JS & REACT COMPONENTS
 import { useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 // IMPORT GSAP & ANIMATIONS
 import gsap from 'gsap';
+
+// IMPORT ASSETS
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 
 export default function About() {
@@ -33,6 +37,17 @@ export default function About() {
     });
 
     gsap.from('p', {
+      opacity: 0,
+      x: -100,
+      ease: 'power4.out',
+      duration: 1,
+      delay: 2,
+      stagger: {
+        amount: 0.3
+      }
+    });
+
+    gsap.from('a', {
       opacity: 0,
       x: -100,
       ease: 'power4.out',
@@ -98,13 +113,22 @@ export default function About() {
           </h2>
           <div className="about-social">
             <div className="about-link">
-              <p className="about-email">EMAIL</p>
+              <Link href="mailto: david.chmarzynski@gmail.com">
+                <a className="about-email" target="_blank">EMAIL</a>
+              </Link>
+              <ArrowRightOutlined />
             </div>
             <div className="about-link">
-              <p className="about-github">GITHUB</p>
+              <Link href="https://github.com/david-chmarzynski">
+                <a className="about-github" target="_blank">GITHUB</a>
+              </Link>
+              <ArrowRightOutlined />
             </div>
             <div className="about-link">
-              <p className="about-linkedin">LINKEDIN</p>
+              <Link href="https://www.linkedin.com/in/david-chmarzynski-3bab78190/">
+                <a className="about-linkedin" target="_blank">LINKEDIN</a>
+              </Link>
+              <ArrowRightOutlined />
             </div>
           </div>
           <h2 className="about-subtitle">
