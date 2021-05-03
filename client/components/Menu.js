@@ -44,7 +44,7 @@ export default function Menu({state, setState}) {
                     </Link>
                   </li>
                   <li className={styles.link}>
-                    <Link href="/contact">
+                    <Link href="mailto: david.chmarzynski@gmail.com">
                       <a
                         className={styles.a}
                       >
@@ -66,8 +66,16 @@ export default function Menu({state, setState}) {
             </div>
           </div>
           <footer className={styles.footer}>
-            <GithubOutlined />
-            <LinkedinOutlined />
+            <Link href="https://github.com/david-chmarzynski">
+              <a target="_blank">
+                <GithubOutlined />
+              </a>
+            </Link>
+            <Link href="https://www.linkedin.com/in/david-chmarzynski-3bab78190/">
+              <a target="_blank">
+                <LinkedinOutlined />
+              </a>
+            </Link>
           </footer>
         </div>
       </div>
