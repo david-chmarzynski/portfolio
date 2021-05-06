@@ -74,6 +74,10 @@ export default function Projets({ setState }) {
         setState({ deployed: false, clicked: true, menu: "Home"});
     }, 850)
 };
+
+const handleEnterCase = (e) => {
+  //console.log(e);
+}
   return (
     <div className='projets-main'>
       <Head>
@@ -112,7 +116,7 @@ export default function Projets({ setState }) {
           <div className="projets-container">
           <div className="projets-cases-row">
             {projects.map((el) => (
-              <div className="projets-case" key={el.id}>
+              <div className="projets-case" key={el.id} onMouseEnter={() => handleEnterCase(el.id)}>
                 <div className="projets-case-details">
                   <span>{el.title}</span>
                   <h2>{el.subtitle}</h2>
