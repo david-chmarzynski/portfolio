@@ -48,7 +48,7 @@ export default function Header({ state, setState }) {
                   <a className={!state.deployed && router.pathname !== "/about" ? "header-link-dark" : "header-link-light"} onClick={handleMenu}>
                     DAVID CHMARZYNSKI
                   </a>
-                  <span className={!state.deployed && router.pathname !== "/about" ? "header-span-dark" : "header-span-light"}>FR</span>
+                  <a className={!state.deployed && router.pathname !== "/about" ? "header-span-dark" : "header-span-light"}>FR</a>
                   </div>
                   {!state.deployed &&  (
                     <a className={!state.deployed && router.pathname !== "/about" ? "header-link-dark" : "header-link-light"} onClick={handleMenu}>
