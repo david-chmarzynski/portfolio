@@ -12,9 +12,9 @@ import gsap from 'gsap';
 
 // PROJETS ARRAY
 const projects = [
-  {id: 1, title: "Messenger", subtitle: "Application de discussion en temps réel.", img: "/images/mess.jpg"},
-  {id: 2, title: "Local Drive", subtitle: "Plateforme \"Click & Collect\" pour le marché local.", img: "/images/local.jpg"},
-  {id: 3, title: "Epitech", subtitle: "Alternance MSC Pro Epitech [2021-2024]", img: "/images/epitech.jpg"}
+  {id: 1, title: "Messenger", subtitle: "Application de discussion en temps réel.", img: "/images/mess.jpg", link: "http://messenger-new.herokuapp.com/"},
+  {id: 2, title: "Local Drive", subtitle: "Plateforme \"Click & Collect\" pour le marché local.", img: "/images/local.jpg", link: "http://local-drive.fr/"},
+  {id: 3, title: "Epitech", subtitle: "Alternance MSC Pro Epitech [2021-2024]", img: "/images/epitech.jpg", link: "https://www.epitech.eu/msc-pro/"}
 ]
 
 export default function Projets({ setState }) {
@@ -76,7 +76,7 @@ export default function Projets({ setState }) {
 };
 
 const handleEnterCase = (e) => {
-  //console.log(e);
+  console.log("enter");
 }
   return (
     <div className='projets-main'>
@@ -116,7 +116,7 @@ const handleEnterCase = (e) => {
           <div className="projets-container">
           <div className="projets-cases-row">
             {projects.map((el) => (
-              <div className="projets-case" key={el.id} onMouseEnter={() => handleEnterCase(el.id)}>
+              <a className="projets-case" href={el.link} target="_blank">
                 <div className="projets-case-details">
                   <span>{el.title}</span>
                   <h2>{el.subtitle}</h2>
@@ -124,7 +124,7 @@ const handleEnterCase = (e) => {
                 <div className="projets-case-image">
                   <img src={el.img} alt={el.title}/>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

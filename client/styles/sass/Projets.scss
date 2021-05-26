@@ -50,6 +50,7 @@ $red: #D82222;
   width: 256px;
   position: relative;
   z-index: 2;
+  cursor: pointer;
 
   a {
     font-size: 1.6rem;
@@ -113,8 +114,9 @@ $red: #D82222;
   cursor: pointer;
   width: 33.333vw;
   &:hover {
-    .case > div {
-      opacity: 0.4;
+    .projets-case-image {
+      opacity: 0.1;
+      transition: .3s;
     }
   }
   @media (max-width: 1100px) {
@@ -277,7 +279,7 @@ $red: #D82222;
   overflow: hidden;
   position: absolute;
   opacity: .65;
-  transition: .4s cubic-bezier(.6,-.05,.1,.99);
+  transition: .6s cubic-bezier(.6,-.05,.1,.99);
 }
 img {
   height: 100%;
